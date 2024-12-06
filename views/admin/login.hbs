@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/styles/userlogin.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+
+
+
+<section></section>
+        <div class="form">
+            <h2>Admin Login</h2>
+            
+            <form action="/admin/login" method="post">
+                <div class="input">
+                    <div class="inputBox">
+                        <label for="">Email</label>
+                        <input id="email" type="text" name="email">
+                    </div>
+                    <div class="inputBox">
+                        <label for="">Password</label>
+                        <input id="password" type="password" name="password">
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Sign In"> 
+                    </div>
+                </div>
+            </form>
+            
+            
+        </div>
+    </section>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function(){
+        document.querySelector('form').addEventListener('submit', formValidate);
+    });
+
+        function formValidate(event){
+        var username = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        
+
+        if(username === '' || password === '' ){
+            Swal.fire("All fields are required!");
+            event.preventDefault(); // Prevent form submission
+            return false;
+        } 
+
+        // Validation passed
+        return true;
+    }
+
+    {{#if message}}
+    Swal.fire({
+  //icon: "success",
+  title: '{{message}}',
+  showConfirmButton: false,
+  timer: 1500
+});
+  {{/if}}
+         
+    </script>

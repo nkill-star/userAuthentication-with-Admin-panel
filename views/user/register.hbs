@@ -1,0 +1,58 @@
+<link rel="stylesheet" href="/styles/userlogin.css">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
+  <section></section>
+        <div class="form">
+            <h2>Sign Up</h2>
+            
+            <form action="/user/register" method="post" >
+                <div class="input">
+                    <div class="inputBox">
+                        <label for="">Email</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div class="inputBox">
+                        <label for="">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <div class="inputBox">
+                        <label for="">Confirm Password</label>
+                        <input type="password" name="confirmpassword" id="confirmpassword">
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="" value="Sign Up"> 
+                    </div>
+                </div>
+            </form>
+            
+            
+        </div>
+    </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        document.querySelector('form').addEventListener('submit', formValidate);
+    });
+
+    function formValidate(event){
+        var username = document.getElementById('email').value;
+        var password = document.getElementById('password').value;
+        var confirmPassword = document.getElementById('confirmpassword').value;
+
+        if(username === '' || password === '' || confirmPassword === ''){
+            Swal.fire("All fields are required!");
+            event.preventDefault(); // Prevent form submission
+            return false;
+        } else if(password !== confirmPassword){
+            Swal.fire("Passwords do not match!");
+            event.preventDefault(); // Prevent form submission
+            return false;
+        }
+
+        // Validation passed
+        return true;
+    }
+
+    
+        
+    
+</script>

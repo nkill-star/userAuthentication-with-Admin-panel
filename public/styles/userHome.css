@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+body{
+ background-color: #060c21;
+ }
+.text-center{
+  color:white;
+  font-size:40px;
+  margin-top:50px;
+  font-family: 'Oswald', sans-serif;
+}
+.message1 {
+  font-size:25px;
+  color:white;
+  margin-top:70px;
+  font-family: 'Oswald', sans-serif;
+ /* margin-left:420px; */
+  text-align:center;
+}
+.message2{
+ text-align:center;
+  color:white;
+  margin-top:20px;
+  font-size:25px;
+  margin-left:30px;
+  font-family: 'Oswald', sans-serif;
+}
+#but{
+    font-family: 'Oswald', sans-serif;
+}
